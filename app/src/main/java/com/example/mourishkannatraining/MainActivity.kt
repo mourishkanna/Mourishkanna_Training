@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         //inflateXml()
         setContentView(R.layout.activity_main)
+        var name:String = "Mourish Kanna"
         Log.i(TAG,"activity is getting created")
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

@@ -1,4 +1,4 @@
-package com.example.mourishkannatraining.javaexamples;
+package com.example.mourishkannatraining.javaexamples.lambdas;
 
 public class DemoLambda {
     public static void main(String[] args) {
