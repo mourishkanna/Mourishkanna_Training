@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Mourishkanna Training</string>
+    <string name="hint_entername">Enter your Username</string>
+    <string name="hint_enterpasscode">Enter your Pin</string>
 </resources>
