@@ -1,4 +1,6 @@
-package com.example.mourishkannatraining;
+package com.example.mourishkannatraining
 
-public class WordsAdapter: RecyclerView.Adapter<WordsViewHolder> {
+import androidx.recyclerview.widget.RecyclerView
+
+class WordsAdapter : RecyclerView.Adapter<WordsViewHolder> {
 }
