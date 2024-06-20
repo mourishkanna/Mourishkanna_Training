@@ -12,7 +12,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.mourishkannatraining.kotlinexamples.Employee
 
 class MainActivity : AppCompatActivity() {
     var TAG = "MainActivity"
@@ -36,11 +35,28 @@ class MainActivity : AppCompatActivity() {
         //var webIntent: Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
         //startActivity(webIntent)
         //createAlarm("Wake Up",19,32)
-
+        var c = 10 + 20
+        add(10,20)
         var hIntent = Intent(this,HomeActivity::class.java)
         hIntent.putExtra("nkey","mourish_phone")
         throw NullPointerException("demo vit exception")
         startActivity(hIntent)
+    }
+
+    private fun add(i: Int, i1: Int):Int {
+        var c = 20
+        var d = 20 * i
+        mul(5,4)
+        return i +i1
+    }
+
+    private fun mul(i: Int, i1: Int) {
+        val d = i * i1
+        div(6,3)
+    }
+
+    private fun div(i: Int, i1: Int) {
+        add(10,20)
     }
 
     fun createAlarm(message: String, hour: Int, minutes: Int) {
