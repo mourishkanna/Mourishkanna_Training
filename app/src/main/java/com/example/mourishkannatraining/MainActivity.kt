@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         var hIntent = Intent(this,HomeActivity::class.java)
         hIntent.putExtra("nkey","mourish_phone")
+        throw NullPointerException("demo vit exception")
         startActivity(hIntent)
     }
 
@@ -62,6 +63,11 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
         Log.w(TAG,"activity has paused")
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.w(TAG,"activity has resumed")
     }
 
     override fun onStop() {
