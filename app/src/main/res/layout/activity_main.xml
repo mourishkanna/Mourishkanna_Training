@@ -2,22 +2,22 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#F6BDAF"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F6BDAF"
     tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/editTextText"
         android:layout_width="@dimen/MKedittextwidth"
         android:layout_height="wrap_content"
-        android:textColor="@color/MKcolour"
         android:layout_marginStart="30dp"
         android:layout_marginTop="61dp"
         android:ems="10"
-        android:inputType="text"
         android:hint="Enter Name"
+        android:inputType="text"
+        android:textColor="@color/MKcolour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,12 +35,24 @@
 
     <Button
         android:id="@+id/button"
-        android:textColor="@android:color/white"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:layout_marginTop="71dp"
         android:text="Login"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="36dp"
+        android:textSize="25sp"
+        android:text="Welcome"
+        android:textColor="@color/MKcolour"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
