@@ -2,4 +2,6 @@
     <string name="app_name">Mourishkanna Training</string>
     <string name="hint_entername">Enter your Username</string>
     <string name="hint_enterpasscode">Enter your Pin</string>
+    <string name="login_label">Login</string>
+    <string name="welcome">Welcome</string>
 </resources>

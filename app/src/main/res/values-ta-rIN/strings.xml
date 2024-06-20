@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">மௌரிஷ்கண்ணா</string>
+    <string name="hint_entername">உங்கள் பெயரை உள்ளிடவும்</string>
+    <string name="hint_enterpasscode">உங்கள் பின்னை உள்ளிடவும்</string>
+    <string name="login_label">உள்நுழைய</string>
+    <string name="welcome">வணக்கம்</string>
+</resources>
