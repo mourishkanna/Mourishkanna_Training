@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="languages">
+        <item>Tamil</item>
+        <item>English</item>
+        <item>Hindi</item>
+        <item>Malayalam</item>
+        <item>Telugu</item>
+        <item>Kannada</item>
+    </string-array>
+    
+    <string-array name="states">
+        <item>TamilNadu</item>
+        <item>Kerala</item>
+        <item>Karnataka</item>
+        <item>Andhra Pradesh</item>
+        <item>Telangana</item>
+        <item>Maharashtra</item>
+    </string-array>
+</resources>
