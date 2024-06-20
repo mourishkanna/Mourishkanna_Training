@@ -3,6 +3,7 @@ package com.example.mourishkannatraining
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.AlarmClock
 import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -28,5 +29,20 @@ class MainActivity : AppCompatActivity() {
         startActivity(dialIntent)
         //var webIntent: Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
         //startActivity(webIntent)
+        //createAlarm("Wake Up",19,32)
+
+        var hIntent = Intent(this,HomeActivity::class.java)
+        startActivity(hIntent)
+    }
+
+    fun createAlarm(message: String, hour: Int, minutes: Int) {
+        val intent = Intent(AlarmClock.ACTION_SET_ALARM).apply {
+            putExtra(AlarmClock.EXTRA_MESSAGE, message)
+            putExtra(AlarmClock.EXTRA_HOUR, hour)
+            putExtra(AlarmClock.EXTRA_MINUTES, minutes)
+        }
+        //if (intent.resolveActivity(packageManager) != null) {
+        startActivity(intent)
+        // }
     }
 }
