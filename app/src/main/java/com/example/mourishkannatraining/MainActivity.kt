@@ -1,5 +1,7 @@
 package com.example.mourishkannatraining
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -21,5 +23,9 @@ class MainActivity : AppCompatActivity() {
     }
     fun myclickHandler(view: View) {
         Log.i("MainActivity","Button Clicked")
+        var dialIntent: Intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:8523941262"))
+        startActivity(dialIntent)
+        //var webIntent: Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
+        //startActivity(webIntent)
     }
 }
