@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         //createAlarm("Wake Up",19,32)
 
         var hIntent = Intent(this,HomeActivity::class.java)
+        hIntent.putExtra("nkey","mourish_phone")
         startActivity(hIntent)
     }
 
