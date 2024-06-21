@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mourishkannatraining.network.MarsApi
 import com.example.mourishkannatraining.network.MarsPhoto
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -41,7 +42,7 @@ class HomeActivity : AppCompatActivity() {
         getMarsPhotos()
     }
     private fun getMarsPhotos() {
-        GlobalScope.launch {
+        GlobalScope.launch(Dispatchers.Main) {
             var listMarsPhotos =   MarsApi.retrofitService.getPhotos()
             photos = listMarsPhotos
             marsAdapter.notifyDataSetChanged()
