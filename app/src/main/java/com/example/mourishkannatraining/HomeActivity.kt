@@ -2,11 +2,15 @@ package com.example.mourishkannatraining
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.mourishkannatraining.network.MarsApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,9 +22,18 @@ class HomeActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        var data = intent.extras?.getString("nkey")
-        Log.i("HomeActivity","data is = "+data)
-        val homeTextView: TextView = findViewById(R.id.HomeTV)
-        homeTextView.setText(data)
+    }
+    fun getJson(view: View) {
+        getMarsPhotos()
+    }
+    private fun getMarsPhotos() {
+        GlobalScope.launch {
+            var jsonString = MarsApi.retrofitService.getPhotos()
+            Log.i("homeactivity",jsonString)
+        }
+    }
+
+    fun getJSON(view: View) {
+        getMarsPhotos()
     }
 }
