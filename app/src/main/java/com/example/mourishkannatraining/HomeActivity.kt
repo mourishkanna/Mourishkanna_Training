@@ -49,7 +49,6 @@ class HomeActivity : AppCompatActivity() {
         GlobalScope.launch(Dispatchers.Main) {
             var listMarsPhotos =   MarsApi.retrofitService.getPhotos()
             photos = listMarsPhotos
-            imageView.load(listMarsPhotos.get(0).imgSrc)
             marsAdapter.notifyDataSetChanged()
             var tvHome:TextView = findViewById(R.id.HomeTV)
 //            tvHome.setText(listMarsPhotos.get(1).imgSrc)
