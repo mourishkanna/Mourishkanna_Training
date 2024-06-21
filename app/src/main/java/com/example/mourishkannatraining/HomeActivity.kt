@@ -3,6 +3,7 @@ package com.example.mourishkannatraining
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.mourishkannatraining.network.MarsApi
 import com.example.mourishkannatraining.network.MarsPhoto
 import kotlinx.coroutines.Dispatchers
@@ -22,11 +24,13 @@ class HomeActivity : AppCompatActivity() {
     lateinit var marsRecyclerView: RecyclerView
     lateinit var marsAdapter: MarsAdapter
     lateinit var photos:List<MarsPhoto>
+    lateinit var imageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_home)
+        imageView = findViewById(R.id.imageView2)
         marsRecyclerView = findViewById(R.id.recyclerViewURLs)
         marsRecyclerView.layoutManager = LinearLayoutManager(this)
         photos = ArrayList()
@@ -45,6 +49,7 @@ class HomeActivity : AppCompatActivity() {
         GlobalScope.launch(Dispatchers.Main) {
             var listMarsPhotos =   MarsApi.retrofitService.getPhotos()
             photos = listMarsPhotos
+            imageView.load(listMarsPhotos.get(0).imgSrc)
             marsAdapter.notifyDataSetChanged()
             var tvHome:TextView = findViewById(R.id.HomeTV)
 //            tvHome.setText(listMarsPhotos.get(1).imgSrc)
