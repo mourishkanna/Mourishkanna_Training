@@ -8,6 +8,10 @@ android {
     namespace = "com.example.mourishkannatraining"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.mourishkannatraining"
         minSdk = 24
