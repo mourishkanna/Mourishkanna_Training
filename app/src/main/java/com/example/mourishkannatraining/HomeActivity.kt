@@ -15,7 +15,9 @@ import com.example.mourishkannatraining.database.Item
 import com.example.mourishkannatraining.database.ItemDao
 import com.example.mourishkannatraining.database.ItemRoomDatabase
 import com.example.mourishkannatraining.databinding.ActivityHomeBinding
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
@@ -34,6 +36,16 @@ class HomeActivity : AppCompatActivity() {
 
         binding.btnDbInsert.setOnClickListener{
             insertDataDb()
+        }
+        binding.btnFind.setOnClickListener{
+            findItemDb(21)
+        }
+    }
+
+    private fun findItemDb(id: Int) {
+        GlobalScope.launch(Dispatchers.Main) {
+            var item = dao.getItem(id).first()
+            binding.tvHome.setText(item.itemName)
         }
     }
 
