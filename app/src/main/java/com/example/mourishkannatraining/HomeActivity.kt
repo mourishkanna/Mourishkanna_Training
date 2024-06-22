@@ -11,6 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.ViewModelProvider
 import com.example.mourishkannatraining.database.Item
 import com.example.mourishkannatraining.database.ItemDao
 import com.example.mourishkannatraining.database.ItemRoomDatabase
@@ -24,6 +25,9 @@ class HomeActivity : AppCompatActivity() {
     var TAG = HomeActivity::class.java.simpleName    //"HomeActivity"
     private lateinit var binding: ActivityHomeBinding
     lateinit var dao: ItemDao
+    lateinit var viewModel: HomeViewModel
+
+    var count = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,13 +37,24 @@ class HomeActivity : AppCompatActivity() {
         setContentView(view)
         var  database = ItemRoomDatabase.getDatabase(this)
         dao = database.itemDao()
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
 
+        binding.tvHome.setText(""+count)
         binding.btnDbInsert.setOnClickListener{
             insertDataDb()
         }
         binding.btnFind.setOnClickListener{
             findItemDb(21)
         }
+
+        binding.btnInc.setOnClickListener{
+            count++
+            binding.tvHome.setText(""+count)
+        }
+    }
+
+    fun add(a:Int,b:Int):Int{
+        return a+b
     }
 
     private fun findItemDb(id: Int) {

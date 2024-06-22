@@ -11,8 +11,8 @@
         android:id="@+id/tvHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="88dp"
         android:text="Home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,8 +21,8 @@
         android:id="@+id/btnDbInsert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="91dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="128dp"
         android:text="insert db"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,4 +36,13 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/btnDbInsert"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <Button
+        android:id="@+id/btnInc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="60dp"
+        android:text="increment"
+        app:layout_constraintStart_toStartOf="@+id/btnDbInsert"
+        app:layout_constraintTop_toBottomOf="@+id/btnDbInsert" />
 </androidx.constraintlayout.widget.ConstraintLayout>
