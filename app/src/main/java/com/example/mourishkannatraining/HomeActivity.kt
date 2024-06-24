@@ -11,6 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.mourishkannatraining.database.Item
 import com.example.mourishkannatraining.database.ItemDao
@@ -38,10 +39,15 @@ class HomeActivity : AppCompatActivity() {
         var  database = ItemRoomDatabase.getDatabase(this)
         dao = database.itemDao()
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        viewModel._seconds.observe(this, secsObserver);
 
-        binding.tvHome.setText(""+viewModel.count)
+        //binding.tvHome.setText(""+viewModel.count)
         binding.btnDbInsert.setOnClickListener{
             insertDataDb()
+        }
+        binding.btnTimer.setOnClickListener{
+            viewModel.startTimer()
+            binding.tvHome.setText(""+viewModel._seconds)
         }
         binding.btnFind.setOnClickListener{
             findItemDb(21)
@@ -56,7 +62,12 @@ class HomeActivity : AppCompatActivity() {
     fun add(a:Int,b:Int):Int{
         return a+b
     }
-
+    var secsObserver : Observer<Int> = object :Observer<Int>{
+        override fun onChanged(observedValue: Int) {
+            //receiving the update/notification
+            binding.tvHome.setText(observedValue.toString())
+        }
+    }
     private fun findItemDb(id: Int) {
         GlobalScope.launch(Dispatchers.Main) {
             var item = dao.getItem(id).first()
