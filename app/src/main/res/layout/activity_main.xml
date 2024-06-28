@@ -46,7 +46,8 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView3"
+        style="@style/myfontstyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
@@ -56,4 +57,16 @@
         android:textColor="@color/MKcolour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/myfontstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="204dp"
+        android:text="TextView"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
