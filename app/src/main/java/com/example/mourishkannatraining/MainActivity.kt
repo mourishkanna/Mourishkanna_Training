@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         var name:String = "Mourish Kanna"
         Log.i(TAG,"activity is getting created")
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainCl)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -33,9 +33,6 @@ class MainActivity : AppCompatActivity() {
         Log.i("MainActivity","Button Clicked")
         var dialIntent: Intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:8523941262"))
         startActivity(dialIntent)
-        //var webIntent: Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
-        //startActivity(webIntent)
-        //createAlarm("Wake Up",19,32)
         var c = 10 + 20
         add(10,20)
         var hIntent = Intent(this,HomeActivity::class.java)
